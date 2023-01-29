@@ -24,6 +24,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { TruncatedTextView } from 'react-native-truncated-text-view';
+
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -76,7 +78,15 @@ function App(): JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
+            <Text style={styles.title}>Truncated Text View</Text>
+            <TruncatedTextView
+              text={'TEST MICROFRONT'}
+              style={styles.textStyle}
+              tailTextStyle={styles.tailText}
+              numberOfLines={2}
+              enableShowLess={false}
+            />
+           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
